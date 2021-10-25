@@ -17,6 +17,13 @@ const propertySchema = mongoose.Schema({
         type: Number,
         default: 0
     },
+    contact: {
+        type: Number,
+        default: 0
+    },
+    address: {
+        type: String
+    },
     images: {
         type: Array,
         default: []

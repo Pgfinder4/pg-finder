@@ -80,8 +80,6 @@ router.post("/getProperties", (req, res) => {
         }
     }
     console.log(findArgs);
-
-
     if (term) {
         Property.find(findArgs)
             .find({ $text: { $search: term } })

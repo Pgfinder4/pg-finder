@@ -23,6 +23,8 @@ function PropertyInfo(props) {
                 {/*<Descriptions.Item label="Sold">{Property.sold}</Descriptions.Item>
                 <Descriptions.Item label="View"> {Property.views}</Descriptions.Item>*/}
                 <Descriptions.Item label="Description"> {Property.description}</Descriptions.Item>
+                <Descriptions.Item label="Contact"> {Property.contact}</Descriptions.Item>
+                <Descriptions.Item label="Address"> {Property.address}</Descriptions.Item>
             </Descriptions>
 
             <br />

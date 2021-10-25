@@ -16,6 +16,8 @@ function UploadPropertyPage(props) {
     const [TitleValue, setTitleValue] = useState("")
     const [DescriptionValue, setDescriptionValue] = useState("")
     const [PriceValue, setPriceValue] = useState(0)
+    const [ContactValue, setContactValue] = useState(0)
+    const [AddressValue, setAddressValue] = useState("")
     const [ContinentValue, setContinentValue] = useState(1)
 
     const [Images, setImages] = useState([])
@@ -31,6 +33,13 @@ function UploadPropertyPage(props) {
     const onPriceChange = (event) => {
         setPriceValue(event.currentTarget.value)
     }
+    const onContactChange = (event) => {
+        setContactValue(event.currentTarget.value)
+    }
+
+    const onAddressChange = (event) => {
+        setAddressValue(event.currentTarget.value)
+    }
 
     const onContinentsSelectChange = (event) => {
         setContinentValue(event.currentTarget.value)
@@ -45,8 +54,8 @@ function UploadPropertyPage(props) {
     const onSubmit = (event) => {
         event.preventDefault();
 
-        if (!TitleValue || !DescriptionValue || !PriceValue ||
-            !ContinentValue || !Images) {
+        if (!TitleValue || !DescriptionValue || !PriceValue ||!ContactValue ||
+            !AddressValue||!ContinentValue || !Images) {
             return alert('fill all the fields first!')
         }
 
@@ -55,7 +64,9 @@ function UploadPropertyPage(props) {
             title: TitleValue,
             description: DescriptionValue,
             price: PriceValue,
-            images: Images,
+            contact:ContactValue,
+            address:AddressValue,
+            images:Images,
             continents: ContinentValue,
         }
 
@@ -99,11 +110,26 @@ function UploadPropertyPage(props) {
                 />
                 <br />
                 <br />
-                <label>Price($)</label>
+                <label>Price(Rs.)</label>
                 <Input
                     onChange={onPriceChange}
                     value={PriceValue}
                     type="number"
+                />
+                <br />
+                <br />
+                <label>Contact</label>
+                <Input
+                    onChange={onContactChange}
+                    value={ContactValue}
+                    type="number"
+                />
+                <br />
+                <br />
+                <label>Address</label>
+                <TextArea
+                    onChange={onAddressChange}
+                    value={AddressValue}
                 />
                 <br />
                 <br />
